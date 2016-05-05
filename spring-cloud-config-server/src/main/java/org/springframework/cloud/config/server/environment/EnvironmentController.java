@@ -276,7 +276,7 @@ public class EnvironmentController {
 				String[] keys = StringUtils.delimitedListToStringArray(stem, ".");
 				for (int i = 0; i < keys.length - 1; i++) {
 					if (current.get(keys[i]) == null) {
-						LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
+						LinkedHashMap<String, Object> map = new LinkedHashMap<>();
 						current.put(keys[i], map);
 						current = map;
 					}
@@ -289,7 +289,7 @@ public class EnvironmentController {
 				}
 				String name = keys[keys.length - 1];
 				if (current.get(name) == null) {
-					current.put(name, new ArrayList<Object>());
+					current.put(name, new ArrayList<>());
 				}
 				@SuppressWarnings("unchecked")
 				List<Object> value = (List<Object>) current.get(name);
